@@ -1,7 +1,4 @@
-package com.local.coding.sudoku;
-
-import static com.local.coding.sudoku.Board.EMPTY_CELL;
-import static com.local.coding.sudoku.Board.GRID_SIZE;
+package dev.coding.sudoku;
 
 /**
  * This class uses Backtracking Recursive algorithm to solve the Sudoku puzzle.
@@ -40,17 +37,17 @@ class Solver {
 	 * Backtracking recursive algorithm to solve sudoku
 	 */
 	private boolean solve(int row, int col) {
-		if (row == GRID_SIZE) {
+		if (row == Board.GRID_SIZE) {
 			row = 0;
-			if (++col == GRID_SIZE) {
+			if (++col == Board.GRID_SIZE) {
 				return true;
 			}
 		}
-		if (board.getCell(row, col) != EMPTY_CELL) {
+		if (board.getCell(row, col) != Board.EMPTY_CELL) {
 			return solve(row + 1, col);
 		}
 		// For all possible values
-		for (int val = 1; val <= GRID_SIZE; val++) {
+		for (int val = 1; val <= Board.GRID_SIZE; val++) {
 			if (isMoveOK(row, col, val)) {
 				board.setCell(row, col, val);
 				if (solve(row + 1, col)) {
@@ -59,7 +56,7 @@ class Solver {
 			}
 		}
 		// Reset the cell to EMPTY to do recursive backtrack and try again
-		board.setCell(row, col, EMPTY_CELL);
+		board.setCell(row, col, Board.EMPTY_CELL);
 		return false;
 	}
 

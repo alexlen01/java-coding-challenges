@@ -1,4 +1,4 @@
-package com.local.coding.sudoku;
+package dev.coding.sudoku;
 
 /**
  * Sudoku External API (only public class of the package)

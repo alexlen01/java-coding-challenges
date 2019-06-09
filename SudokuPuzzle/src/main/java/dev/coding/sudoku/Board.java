@@ -1,4 +1,4 @@
-package com.local.coding.sudoku;
+package dev.coding.sudoku;
 
 import java.util.Arrays;
 
@@ -42,7 +42,7 @@ final class Board {
 
 	/**
 	 * Returns the specified column
-	 * 
+	 *
 	 * @param col column number (starting from 0)
 	 */
 	int[] getColumn(int col) {
@@ -55,10 +55,6 @@ final class Board {
 
 	/**
 	 * Return the numbers from an area of the board (classically a 3x3 square)
-	 * 
-	 * @param row row number
-	 * @param col column number
-	 * @return the area that enclose the specified row/col values
 	 */
 	int[] getRegion(int row, int col) {
 		final int[] regionView = new int[GRID_SIZE];
@@ -85,7 +81,6 @@ final class Board {
 	/**
 	 * Return a string containing the sudoku with region separators
 	 */
-	@Override
 	public String toString() {
 		// Exact size of the generated string for the buffer (values + spacers)
 		final int size = (GRID_SIZE * 2 + 1 + ((REGION_SIZE + 1) * 2)) * (GRID_SIZE + REGION_SIZE + 1);
